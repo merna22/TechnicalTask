@@ -1,0 +1,68 @@
+<!-- employee-dialog.component.html -->
+<div class="container">
+  <div mat-dialog-title>
+    <h1 >{{ data.name }} Details</h1>
+  </div>
+  
+  <div mat-dialog-content class="dialog-content">
+    <div class="row">
+      <div class="col-5">
+        <h2>No:</h2>
+
+      </div>
+      <div class="col-6">
+       <h2> {{ data.id }} </h2> 
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <h2>Department:</h2>
+
+      </div>
+      <div class="col-6">
+       <h2> {{ data.department }} </h2> 
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <h2>Performance:</h2>
+
+      </div>
+      <div class="col-6">
+       <h2> {{ data.performance }} </h2> 
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-5">
+        <h2>Skills:</h2>
+
+      </div>
+      <div class="col-6">
+       <h2> {{ data.skills }} </h2> 
+      </div>
+      
+    </div>
+   <div class="row">
+    <h4>select department</h4>
+  <mat-form-field>
+    <mat-label>choice new Department</mat-label>
+    <mat-select [(ngModel)]="selectedDepartment">
+     
+        <mat-option *ngFor="let dept of departments"  [value]="dept.value">{{dept.description}}</mat-option>
+      
+    </mat-select>
+  </mat-form-field>
+   </div>
+    
+  
+  </div>
+  <mat-dialog-actions class="mt-5 mb-2">
+    <button mat-raised-button  color="warn"(click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="submitRelocation()" >Update Department</button>
+  </mat-dialog-actions>
+  
+</div>
